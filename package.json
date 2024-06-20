@@ -1,0 +1,14 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "This is Video 2 of namaste react series",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Abhinandan Sah",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
