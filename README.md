@@ -22,3 +22,5 @@ This repository contains Namaste React Learning and INT252 Classroom Learning co
 - Https -> runs on ssh/http also
 - Tree shaking - remove unused code
 - Diffenent dev and production bundles
+
+# Babel -> it is js compiler that convert jsx to react element (It is beast)
