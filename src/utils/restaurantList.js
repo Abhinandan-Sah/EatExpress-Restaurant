@@ -1,5 +1,5 @@
 // RestaurantList is JSON Data for displaying cards
-const restaurantList = [
+let restaurantList = [
     {
       type: "restaurant",
       data: {

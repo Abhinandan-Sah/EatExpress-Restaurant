@@ -10,7 +10,7 @@ body{
     display: flex;
     justify-content: space-between;
     padding: 0 1rem;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: fit-content;
 }
 
@@ -31,6 +31,11 @@ body{
 }
 
 /* Inside body*/
+.filter-btn{
+    padding: 10px;
+    cursor: pointer;
+}
+
 .res-container{
     display: flex;
     flex-wrap: wrap;
@@ -41,7 +46,7 @@ body{
 .res-card{
     padding: 5px;
     width: 250px;
-    height: fit-content;
+    height: 450px;
 }
 
 .res-card:hover{
