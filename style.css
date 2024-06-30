@@ -31,8 +31,12 @@ body{
 }
 
 /* Inside body*/
+.filter{
+    display: flex; 
+}
 .filter-btn{
-    padding: 10px;
+    /* padding: 10px; */
+    margin-left: 20px;
     cursor: pointer;
 }
 
