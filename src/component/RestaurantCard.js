@@ -15,7 +15,7 @@ const RestaurantCard = ((props) => {
   const {deliverys} = resData?.info?.sla?.slaString;
 
   return (
-    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
+    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }} >
       <img
         className="res-logo"
         alt="res-logo"

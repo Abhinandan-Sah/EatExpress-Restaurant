@@ -1,6 +1,4 @@
-*{
-    /* background-color: grey ; */
-}
+
 
 body{
     padding: 0rem 2rem;
@@ -28,6 +26,11 @@ body{
 .nav-items > ul > li{
     padding: 10px;
     margin: 10px;
+}
+
+.nav-items > ul > li > a {
+    text-decoration: none;
+    color: black;
 }
 
 /* Inside body*/
