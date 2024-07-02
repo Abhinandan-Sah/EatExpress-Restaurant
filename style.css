@@ -50,6 +50,11 @@ body{
     gap: 15px;
 }
 
+.res-container > a{
+    text-decoration: none;
+    color: black;
+}
+
 .res-card{
     padding: 5px;
     width: 250px;
@@ -79,4 +84,10 @@ body{
     width: 250px;
     height: 450px;
     background-color: #f0f0f0;
+}
+
+/* About Us page */
+.user-card{
+    padding: 10px;
+    border: 1px solid black;
 }

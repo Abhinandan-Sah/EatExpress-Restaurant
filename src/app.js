@@ -6,8 +6,7 @@ import Body from "./component/Body.js";
 import About from "./component/About.js";
 import Error from "./component/Error.js";
 import Contact from "./component/Contact.js";
-import RestaurantMenu from "./component/RestaurantMenu.js";
-
+import RestaurantMenu from "./component/RestaurantMenu.js"
 // const heading = React.createElement("h1", {id:"heading"}, "I am Iron Man");
 
 // Application Layout component
