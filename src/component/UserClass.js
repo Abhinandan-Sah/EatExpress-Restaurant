@@ -5,27 +5,29 @@ class UserClass extends React.Component{
         super(props);
 
         // Hooks in class-component
-        this.state = {
-            count: 0,
+        this.state = { 
+            userInfo:{
+                name: "Dummy",
+                location: "DummyLocation",
+            }
         }
     }
 
-    componentDidMount(){
-        console.log("Child Component Did Mount")
+    async componentDidMount(){
+         const data = await fetch("https://api.github.com/users/Abhinandan-Sah")
+         const json = await data.json();
+         console.log(json);
+
+         this.setState({
+            userInfo: json,
+         })
     }
 
     render(){
-        const {name, location} = this.props;
-        const {count} = this.state;
+        const {name, location, avatar_url} = this.state.userInfo;
         return(
-            <div className="user-card">
-            <h2>Count: {count}</h2>
-            <button onClick={()=>{
-                //never update state variable directly
-                this.setState({
-                    count: this.state.count+1,
-                })
-            }}>Count Increase</button>
+            <div className="user-card"> 
+            <img src={avatar_url} />
             <h3>Name: {name}</h3>
             <h4>Location: {location}</h4>
             <h4>Contact: abhinandansah222@gmail.com</h4>

@@ -13,7 +13,8 @@ body{
 }
 
 .logo{
-    width: 100px;
+    margin-left: -30px;
+    width: 150px;
 }
 
 .nav-items > ul{

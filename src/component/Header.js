@@ -17,7 +17,7 @@ const Header = () => {
   });
 
   useEffect(() => {
-    console.log("useEffect called");
+    // console.log("useEffect called");
   })
 
   return (
