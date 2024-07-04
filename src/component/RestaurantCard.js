@@ -1,4 +1,4 @@
-import { REST_CARD_CDN_URL } from "../utils/constants";
+import { REST_CARD_CDN_API } from "../utils/constants";
 
 const RestaurantCard = ((props) => {
   const {resData} = props;
@@ -19,7 +19,7 @@ const RestaurantCard = ((props) => {
       <img
         className="res-logo"
         alt="res-logo"
-        src={REST_CARD_CDN_URL+cloudinaryImageId}
+        src={REST_CARD_CDN_API+cloudinaryImageId}
       ></img>
       <h3>{name}</h3>
       {/* <p>ID= {id}</p> */}
