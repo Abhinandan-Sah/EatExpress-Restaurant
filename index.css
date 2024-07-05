@@ -1,5 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
+/*
 body{
     padding: 0rem 2rem;
 }
@@ -8,7 +12,6 @@ body{
     display: flex;
     justify-content: space-between;
     padding: 0 1rem;
-    /* border: 1px solid black; */
     height: fit-content;
 }
 
@@ -35,11 +38,11 @@ body{
 }
 
 /* Inside body*/
+/*
 .filter{
     display: flex; 
 }
 .filter-btn{
-    /* padding: 10px; */
     margin-left: 20px;
     cursor: pointer;
 }
@@ -72,8 +75,9 @@ body{
 .res-logo{
     width: 100%;
 }
-
+*/
 /* Shimmer */
+/*
 .shimmer-container{
     display: flex;
     flex-wrap: wrap;
@@ -86,9 +90,10 @@ body{
     height: 450px;
     background-color: #f0f0f0;
 }
+*/
 
 /* About Us page */
-.user-card{
+/* .user-card{
     padding: 10px;
     border: 1px solid black;
-}
+} */

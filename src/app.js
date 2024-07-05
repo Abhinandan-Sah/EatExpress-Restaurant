@@ -1,16 +1,19 @@
-import React from "react";
+import React, {lazy, Suspense} from "react";
 import ReactDom from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet   } from "react-router-dom";
 import Header from "./component/Header.js";
 import Body from "./component/Body.js";
-import About from "./component/About.js";
+// import About from "./component/About.js";
 import Error from "./component/Error.js";
 import Contact from "./component/Contact.js";
 import RestaurantMenu from "./component/RestaurantMenu.js"
 // const heading = React.createElement("h1", {id:"heading"}, "I am Iron Man");
 
+const About = lazy(()=> import("./component/About.js"))
+
 // Application Layout component
 const AppLayout = () => {
+
   return (
     <div className="app">
       <Header />
@@ -37,7 +40,7 @@ const appRouter = createBrowserRouter([
       },
       {
       path: "/about",
-      element: <About />
+      element: <Suspense fallback={(<h1>Loading...</h1>)}><About /></Suspense> 
     },
     {
       path: "/contact",
