@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
  import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -10,8 +10,8 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
 
   const [listOfRestaurants, filteredRestaurant, setListOfRestaurants, setFilteredRestaurant] = useBodyRestaurantCard();
-  console.log("This is listRestaurant");
-  console.log(listOfRestaurants);
+  
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   const onlineStatus = useOnlineStatus();
 
@@ -23,19 +23,19 @@ const Body = () => {
     return <Shimmer />;
   } else {
     return (
-      <div className="body">
-        <div className="filter">
-          <div className="search">
+      <div className="body flex flex-col justify-center items-center mt-[10rem]">
+        <div className="filter flex justify-center  -mt-3 mb-2 fixed top-[8rem] bg-white w-full">
+          <div className="search  p-4">
             <input
               type="text"
-              className="search-box"
+              className="search-box border border-solid h-9 border-black rounded-lg"
               value={searchText}
               onChange={(e) => {
                 // e.preventDefault();
                 setSearchText(e.target.value);
               }}
             />
-            <button
+            <button className="px-4 py-2 mx-4 bg-green-300 rounded-lg"
               onClick={() => {
                 //Filter the restraunt cards and update the UI
                 //searchText
@@ -50,8 +50,9 @@ const Body = () => {
               Search
             </button>
           </div>
+          <div className="flex items-center">
           <button
-            className="filter-btn"
+            className="filter-btn px-4 py-2  bg-blue-200 rounded-lg"
             onClick={() => {
               filterList = listOfRestaurants.filter(
                 (res) => res.info.avgRating > 4
@@ -62,9 +63,11 @@ const Body = () => {
           >
             Top Rated Restaurants
           </button>
+          </div>
+          
         </div>
 
-        <div className="res-container">
+        <div className="flex flex-wrap justify-center mt-8  res-container">
           {/* {" "} */}
           {/* res=  restaurant*/}
           {filteredRestaurant.map((restaurant) => {
@@ -74,7 +77,8 @@ const Body = () => {
                 key={restaurant.info.id}
                 to={"/restaurants/" + restaurant.info.id}
               >
-                <RestaurantCard resData={restaurant} />{" "}
+                {/*  if the resstaurant is promoted then add a promoted label to it  */}
+                {restaurant.info.promoted? (  <RestaurantCardPromoted resData={restaurant}  />) : ( <RestaurantCard resData={restaurant} />)}
               </Link>
             );
           })}

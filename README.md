@@ -24,3 +24,5 @@ This repository contains Namaste React Learning and INT252 Classroom Learning co
 - Diffenent dev and production bundles
 
 # Babel -> it is js compiler that convert jsx to react element (It is beast)
+
+# for suggestion in tailwind press (ctrl+spacebar)

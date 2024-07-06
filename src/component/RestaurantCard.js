@@ -10,25 +10,39 @@ const RestaurantCard = ((props) => {
     avgRating,
     cuisines,
     costForTwo,
-    // deliveryTime,
   } = resData?.info;
   
 
   return (
-    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }} >
+    <div className="m-4 p-4 w-[250px]  rounded-md bg-gray-100 hover:bg-gray-200 hover:   res-card" >
       <img
-        className="res-logo"
+        className="rounded-lg res-logo"
         alt="res-logo"
         src={REST_CARD_CDN_API+cloudinaryImageId}
       ></img>
-      <h3>{name}</h3>
-      {/* <p>ID= {id}</p> */}
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating} Stars</h4>
-      <h4>{costForTwo} </h4>
-      <h4>{resData?.info?.sla?.deliveryTime} minutes</h4>
+      <h3 className="font-bold py-4 text-lg">{name}</h3>
+      <h4 className="font-semibold pb-2 text-base">{cuisines.join(", ")}</h4>
+      <h4 className="font-semibold pb-2 text-base">⭐ {avgRating}</h4>
+      <h4 className="font-semibold pb-2 text-base">{costForTwo} </h4>
+      <h4 className="font-semibold pb-2 text-base">{resData?.info?.sla?.deliveryTime} minutes</h4>
     </div>
   );
 });
+
+// Higher Order Component
+
+//input - RestaurantCard ==>> RestaurantCardPromoted
+
+export const withPromotedLabel = (RestaurantCard) => {
+  // returning Function (with enhance feture like promoted label)
+  return (props) => {
+    return(
+      <div>
+        <label className="absolute bg-black text text-white p-2 m-2 rounded-lg">Promoted</label>
+        <RestaurantCard {...props}/>
+      </div>
+    );
+  }
+}
 
 export default RestaurantCard;
