@@ -70,7 +70,7 @@ const Body = () => {
         <div className="flex flex-wrap justify-center mt-8  res-container">
           {/* {" "} */}
           {/* res=  restaurant*/}
-          {filteredRestaurant.map((restaurant) => {
+          {filteredRestaurant?.map((restaurant) => {
             // console.log({ restaurant });
             return (
               <Link
@@ -78,7 +78,7 @@ const Body = () => {
                 to={"/restaurants/" + restaurant.info.id}
               >
                 {/*  if the resstaurant is promoted then add a promoted label to it  */}
-                {restaurant.info.promoted? (  <RestaurantCardPromoted resData={restaurant}  />) : ( <RestaurantCard resData={restaurant} />)}
+                {restaurant?.info?.promoted ? (  <RestaurantCardPromoted resData={restaurant}  />) : ( <RestaurantCard resData={restaurant} />)}
               </Link>
             );
           })}
