@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Header_LOGO_URL } from "../utils/constants";
 import {Link} from "react-router-dom"
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext.js";
 
 // Header Component
 let btnName = "Login"
@@ -9,6 +10,8 @@ const Header = () => {
   const [BtnName, setBtnName] = useState(btnName);
 
   const onlineStatus = useOnlineStatus();
+
+  const {loggedInUser} = useContext(UserContext);
   
   let btnChange = (() =>{
     if(BtnName == "Login"){
@@ -36,6 +39,7 @@ const Header = () => {
           <div className="flex">
             <button className=" bg-orange-300 px-4 py-1 items-start -mt-1 rounded-lg" onClick={btnChange}>{BtnName}</button>
           </div>
+          <li className="px-4 font-bold">{loggedInUser}</li>
         </ul>
       </div>
     </div>
