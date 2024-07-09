@@ -26,3 +26,15 @@ This repository contains Namaste React Learning and INT252 Classroom Learning co
 # Babel -> it is js compiler that convert jsx to react element (It is beast)
 
 # for suggestion in tailwind press (ctrl+spacebar)
+
+# 2 Types of Routing in web apps
+ - Client Side Routing
+ - Server Side Routing
+
+ # Redux Toolkit
+  - Install @reduxjs/toolkit and react-redux  
+  - Build our store
+  - Connect our Store to our app
+  - Slice (cartSlice)
+  - Dispatch(action)
+  - Selector

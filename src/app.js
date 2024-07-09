@@ -9,6 +9,9 @@ import Contact from "./component/Contact.js";
 import RestaurantMenu from "./component/RestaurantMenu.js";
 // const heading = React.createElement("h1", {id:"heading"}, "I am Iron Man");
 import UserContext from "./utils/UserContext.js";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore.js";
+
 
 const About = lazy(() => import("./component/About.js"));
 
@@ -25,6 +28,7 @@ const AppLayout = () => {
 
   return (
     <div className="app">
+      <Provider store={appStore}>
       <UserContext.Provider value={{loggedInUser : userName, setUserName}}>
         <Header />
         {/** if path = / */}
@@ -35,6 +39,7 @@ const AppLayout = () => {
         {/* <Contact /> */}
         <Outlet />
       </UserContext.Provider>
+      </Provider>
     </div>
   );
 };

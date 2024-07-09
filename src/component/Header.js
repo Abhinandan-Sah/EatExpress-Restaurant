@@ -3,6 +3,7 @@ import { Header_LOGO_URL } from "../utils/constants";
 import {Link} from "react-router-dom"
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext.js";
+import { useSelector } from "react-redux";
 
 // Header Component
 let btnName = "Login"
@@ -12,6 +13,10 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   const {loggedInUser} = useContext(UserContext);
+
+  //Selector
+  // Subscribing to the store using a selector
+  const cartItems = useSelector((store) => store.cart.items);
   
   let btnChange = (() =>{
     if(BtnName == "Login"){
@@ -35,7 +40,7 @@ const Header = () => {
           <li className="px-4"><Link to="/">Home</Link></li>
           <li className="px-4"><Link to="/about">About Us</Link></li>
           <li className="px-4"><Link to="/contact">Contact</Link></li>
-          <li className="px-4"><Link to="/">Cart</Link></li>
+          <li className="px-4 font-bold text-xl">🛒{cartItems.length}</li>
           <div className="flex">
             <button className=" bg-orange-300 px-4 py-1 items-start -mt-1 rounded-lg" onClick={btnChange}>{BtnName}</button>
           </div>
