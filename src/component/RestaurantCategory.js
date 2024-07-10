@@ -1,7 +1,6 @@
 import ItemList from "./ItemList.js";
 
 const RestaurantCategory = ({dataRes, showItems, setShowIndex}) => {
-
     const handleClick = (() => {
         setShowIndex();
     });

@@ -17,6 +17,7 @@ const Header = () => {
   //Selector
   // Subscribing to the store using a selector
   const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
   
   let btnChange = (() =>{
     if(BtnName == "Login"){
@@ -29,7 +30,7 @@ const Header = () => {
 
 
   return (
-    <div className="flex justify-between bg-white fixed top-0 w-full header">
+    <div className="flex justify-between bg-white fixed top-0 w-full header z-50 ">
       <div className="logo-container">
         <img className="w-36 logo" src={Header_LOGO_URL}></img>
       </div>
@@ -40,7 +41,7 @@ const Header = () => {
           <li className="px-4"><Link to="/">Home</Link></li>
           <li className="px-4"><Link to="/about">About Us</Link></li>
           <li className="px-4"><Link to="/contact">Contact</Link></li>
-          <li className="px-4 font-bold text-xl">🛒{cartItems.length}</li>
+          <li className="px-4 font-bold text-xl"><Link to="/cart">🛒{cartItems.length} items</Link></li>
           <div className="flex">
             <button className=" bg-orange-300 px-4 py-1 items-start -mt-1 rounded-lg" onClick={btnChange}>{BtnName}</button>
           </div>

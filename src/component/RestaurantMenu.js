@@ -18,18 +18,18 @@ const RestaurantMenu = () => {
       resInfo?.cards[2]?.card?.card?.info ||
       resInfo?.cards[1]?.card?.card?.info;
 
-    const { itemCards } =
-      resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-        ?.card ||
-      resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-        ?.card;
+    // const { itemCards } =
+    //   resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+    //     ?.card ||
+    //   resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+    //     ?.card;
+    const  itemCards  = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards || resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
     const categories =
-      resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      itemCards?.filter(
         (c) =>
           c.card?.card?.["@type"] ==
           "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
       );
-    console.log(categories);
 
     return (
       <div className="text-center mt-[10rem]">
