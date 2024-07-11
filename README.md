@@ -52,6 +52,9 @@ This repository contains Namaste React Learning and INT252 Classroom Learning co
  - Config Parcel Config file to disable default babel transpilation
  - Jest configuration by npx jest --init
  - Install jsdom library from react testing library (if jest version is greater than 28 than install this separately npm install --save-dev jest-environment-jsdom)
+ - Install @babel/preset-react -so that to make JSX work in test cases
+ - Include @babel/preset-react inside my babel config
+ - Install @testing-library/jest-dom
 
  # __tests__ 
   - this __ __ means dunder method. it is use as reserve word
