@@ -15,15 +15,15 @@ class UserClass extends React.Component{
         }
     }
 
-    async componentDidMount(){
-         const data = await fetch("https://api.github.com/users/Abhinandan-Sah")
-         const json = await data.json();
-         console.log(json);
+    // async componentDidMount(){
+    //      const data = await fetch("https://api.github.com/users/Abhinandan-Sah")
+    //      const json = await data.json();
+    //      console.log(json);
 
-         this.setState({
-            userInfo: json,
-         })
-    }
+    //      this.setState({
+    //         userInfo: json,
+    //      })
+    // }
 
     render(){
         const {name, location, avatar_url} = this.state.userInfo;
@@ -31,15 +31,17 @@ class UserClass extends React.Component{
             <div className="user-card"> 
             
             <img src={avatar_url} />
-            <h3>Name: Dwiggy</h3>
+            <h3>Name: EatExpress</h3>
             <h4>Location: Lovely Profession university</h4>
-            <h4>Contact: dwiggy@gmail.com</h4>
+            <h4>Contact: EatExpress@gmail.com</h4>
             <div>LoggedIn User - 
                 <UserContext.Consumer>
                     {({loggedInUser}) => (<h1 className="font-bold">{loggedInUser}</h1>)}
                 </UserContext.Consumer>
             </div>
         </div>
+
+        
         );
     }
 }

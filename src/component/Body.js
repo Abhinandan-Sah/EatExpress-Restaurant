@@ -26,8 +26,8 @@ const Body = () => {
     return <Shimmer />;
   } else {
     return (
-      <div className="body flex flex-col justify-center items-center mt-[10rem]">
-        <div className="filter flex justify-center  -mt-3 mb-2 fixed top-[9rem] bg-white w-full">
+      <div className="body flex flex-col justify-center items-center mt-[6rem]">
+        <div className="filter flex justify-center bg-white fixed top-20 w-full">
           <div className="search  p-4">
             <input
               type="text"
@@ -74,7 +74,7 @@ const Body = () => {
           
         </div>
 
-        <div className="flex flex-wrap justify-center mt-8  res-container">
+        <div className="flex flex-wrap justify-center   res-container">
           {/* {" "} */}
           {/* res=  restaurant*/}
           {filteredRestaurant?.map((restaurant) => {

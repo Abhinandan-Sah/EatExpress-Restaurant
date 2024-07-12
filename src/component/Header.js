@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-import { Header_LOGO_URL } from "../utils/constants";
 import {Link} from "react-router-dom"
 import useOnlineStatus from "../utils/useOnlineStatus";
+import EatExpressLogo from "../../public/img/EatExpress-Logo.png"
 import UserContext from "../utils/UserContext.js";
 import { useSelector } from "react-redux";
 
@@ -30,9 +30,9 @@ const Header = () => {
 
 
   return (
-    <div className="flex justify-between bg-white fixed top-0 w-full header z-50 ">
+    <div className="flex justify-between items-center bg-white fixed top-0 w-full header z-50 ">
       <div className="logo-container">
-        <img className="w-36 logo" src={Header_LOGO_URL}></img>
+        <img className="w-36 logo ml-12" src={EatExpressLogo}></img>
       </div>
 
       <div className="flex items-center nav-items">
