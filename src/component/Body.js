@@ -74,7 +74,7 @@ const Body = () => {
           
         </div>
 
-        <div className="flex flex-wrap justify-center   res-container">
+        <div className="flex flex-wrap justify-center mt-16  res-container">
           {/* {" "} */}
           {/* res=  restaurant*/}
           {filteredRestaurant?.map((restaurant) => {
