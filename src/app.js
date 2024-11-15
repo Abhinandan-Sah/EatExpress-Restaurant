@@ -12,6 +12,7 @@ import UserContext from "./utils/UserContext.js";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore.js";
 import Cart from "./component/Cart.js";
+import Footer from "./component/Footer.js";
 
 
 const About = lazy(() => import("./component/About.js"));
@@ -39,6 +40,7 @@ const AppLayout = () => {
         {/** if path = /contact */}
         {/* <Contact /> */}
         <Outlet  />
+        <Footer />
       </UserContext.Provider>
       </Provider>
     </div>

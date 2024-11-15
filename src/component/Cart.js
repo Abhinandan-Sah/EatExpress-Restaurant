@@ -4,12 +4,18 @@ import { clearCart } from "../utils/cartSlice";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items)
+  console.log(cartItems);
 
   const dispatch = useDispatch();
 
   const handleClear = () => {
     dispatch(clearCart())
   }
+
+  const handleCheckout = () => {
+    // Implement your checkout logic here
+    alert('Proceeding to checkout');
+  };
 
   return (
     <div className="mt-[9rem] text-center">
@@ -21,6 +27,15 @@ const Cart = () => {
           {cartItems.length==0 && <h1 className="mt-2 font-semibold text-lg">Cart is empty!. Please Add items to cart🙏</h1>}
           <ItemList items={cartItems}/>
       </div>
+      <div className="w-6/12 m-auto bg-orange-400 px-2 py-4 flex justify-between text-2xl font-bold text-slate-100">
+        <div>Total</div>
+        <div className="mr-2">
+        ₹ {cartItems.reduce((total, individul) => total + (individul.card.info.price ? individul.card.info.price / 100 : individul.card.info.defaultPrice / 100), 0).toFixed(2)}        
+        </div>
+      </div>
+      <div className="w-6/12 m-auto flex justify-end mt-4">
+    <button className="bg-green-500 font-semibold p-2 text-white rounded-lg" onClick={handleCheckout}>Checkout</button>
+  </div>
     </div>
   );
 };
