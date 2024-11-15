@@ -1,7 +1,5 @@
-# ReactJS-Code
-This repository contains Namaste React Learning and INT252 Classroom Learning codes
-
-
+# EatExpress Resturant
+- Eat Express is a modern Day restaurant for serving varities types of food.
 
 # Parcel Provides
 - parcel is bundler
