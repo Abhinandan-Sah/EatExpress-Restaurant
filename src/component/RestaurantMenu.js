@@ -12,6 +12,8 @@ const RestaurantMenu = () => {
   const resInfo = useRestaurantMenu(resId);
 
   if (resInfo === null) return <h1 className="font-bold mt-[12rem]">Loading</h1>;
+
+  console.log(resInfo);
   
     const { id, name, cuisines, costForTwoMessage } =
       resInfo?.cards[2]?.card?.card?.info ||
