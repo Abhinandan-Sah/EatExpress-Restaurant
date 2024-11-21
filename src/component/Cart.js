@@ -1,10 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import ItemList from "./ItemList.js"
 import { clearCart } from "../utils/cartSlice";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items)
-  console.log(cartItems);
+  // console.log(cartItems);
+  const navigate= useNavigate();
 
   const dispatch = useDispatch();
 
@@ -13,8 +15,7 @@ const Cart = () => {
   }
 
   const handleCheckout = () => {
-    // Implement your checkout logic here
-    alert('Proceeding to checkout');
+    navigate("/payment");
   };
 
   return (

@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu.js";
 import RestaurantCategory from "./RestaurantCategory.js";
 import { useState } from "react";
-
+import Loading from 'react-loading';
 
 const RestaurantMenu = () => {
   const[showIndex, setShowIndex] = useState(null);
@@ -11,9 +11,15 @@ const RestaurantMenu = () => {
 
   const resInfo = useRestaurantMenu(resId);
 
-  if (resInfo === null) return <h1 className="font-bold mt-[12rem]">Loading</h1>;
+  if (resInfo === null) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Loading type="spin" color="#000" height={50} width={50} />
+      </div>
+    );
+  }
 
-  console.log(resInfo);
+  // console.log(resInfo);
   
     const { id, name, cuisines, costForTwoMessage } =
       resInfo?.cards[2]?.card?.card?.info ||
@@ -33,7 +39,7 @@ const RestaurantMenu = () => {
       );
 
     return (
-      <div className="text-center mt-[10rem]">
+      <div className="text-center mt-[7rem]">
         <h1 className="font-bold my-6 text-2xl">{name}</h1>
         <p className="font-bold text-lg">
           {cuisines.join(", ")} - {costForTwoMessage}
