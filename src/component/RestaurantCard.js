@@ -1,4 +1,6 @@
 import { REST_CARD_CDN_API } from "../utils/constants";
+import { Star, Clock, DollarSign, Utensils, IndianRupee } from 'lucide-react';
+
 
 const RestaurantCard = ((props) => {
   const {resData} = props;
@@ -14,17 +16,60 @@ const RestaurantCard = ((props) => {
   
 
   return (
-    <div className="m-4 p-4  w-[250px]  rounded-md bg-gray-100 hover:bg-gray-200 hover:   res-card" >
-      <img
-        className="rounded-lg  res-logo"
-        alt="res-logo"
-        src={REST_CARD_CDN_API+cloudinaryImageId}
-      ></img>
-      <h3 className="font-bold py-4 text-lg">{name}</h3>
-      <h4 className="font-semibold pb-2 text-base">{cuisines.join(", ")}</h4>
-      <h4 className="font-semibold pb-2 text-base">⭐ {avgRating}</h4>
-      <h4 className="font-semibold pb-2 text-base">{costForTwo} </h4>
-      <h4 className="font-semibold text-base">{resData?.info?.sla?.deliveryTime} minutes</h4>
+    <div className="w-72 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white m-4">
+      {/* Image Container */}
+      <div className="relative h-48 w-full overflow-hidden rounded-t-md">
+        <img
+          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          src={REST_CARD_CDN_API+cloudinaryImageId}
+          alt={name}
+        />
+      </div>
+
+      {/* Content Container */}
+      <div className="p-4">
+        {/* Restaurant Name */}
+        <h3 className="font-bold text-xl mb-2 text-gray-800 line-clamp-1">
+          {name}
+        </h3>
+
+        {/* Cuisines */}
+        <div className="flex items-center gap-2 mb-2">
+          <Utensils className="w-4 h-4 text-gray-600" />
+          <p className="text-sm text-gray-600 line-clamp-1">
+            {cuisines.join(", ")}
+          </p>
+        </div>
+
+        {/* Rating */}
+        <div className="flex items-center gap-2 mb-2">
+          <div className="flex items-center gap-1 bg-green-50 px-2 py-1 rounded">
+            <Star className="w-4 h-4 fill-yellow-400 stroke-yellow-400" />
+            <span className="font-semibold text-sm text-gray-700">
+              {avgRating}
+            </span>
+          </div>
+        </div>
+
+        {/* Cost and Time Container */}
+        <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
+          {/* Cost For Two */}
+          <div className="flex items-center gap-1">
+            <IndianRupee className="w-4 h-4 text-gray-600" />
+            <span className="text-sm font-medium text-gray-700">
+              {costForTwo}
+            </span>
+          </div>
+
+          {/* Delivery Time */}
+          <div className="flex items-center gap-1">
+            <Clock className="w-4 h-4 text-gray-600" />
+            <span className="text-sm font-medium text-gray-700">
+            {resData?.info?.sla?.deliveryTime}  mins
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 });

@@ -27,7 +27,7 @@ const Body = () => {
   } else {
     return (
       <div className="body flex flex-col justify-center items-center mt-[6rem]">
-        <div className="filter flex justify-center bg-white fixed top-20 w-full">
+        <div className="filter flex justify-center bg-white fixed top-20 w-full z-50">
           <div className="search  p-4">
             <input
               type="text"

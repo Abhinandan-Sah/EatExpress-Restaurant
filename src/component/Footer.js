@@ -1,7 +1,6 @@
 import { Facebook, Instagram, Twitter } from "lucide-react"
 import { Link } from "react-router-dom"
 
-
 export default function Footer() {
   return (
     <footer className="bg-orange-400 text-black py-12">
@@ -23,6 +22,15 @@ export default function Footer() {
               <li><Link href="/partner" className="hover:text-black">Partner with us</Link></li>
               <li><Link href="/ride" className="hover:text-black">Ride with us</Link></li>
             </ul>
+            <div className="mt-4">
+              <h4 className="font-medium mb-2">Head Office:</h4>
+              <address className="not-italic">
+                EatExpress India Pvt. Ltd.<br />
+                Phase 8B, Sector 74<br />
+                Mohali, Punjab 160055<br />
+                India
+              </address>
+            </div>
           </div>
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-black">Legal</h3>
@@ -35,10 +43,11 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-black">Delivery Cities</h3>
             <ul className="space-y-2">
-              <li><Link href="/city/new-york" className="hover:text-black">New York</Link></li>
-              <li><Link href="/city/los-angeles" className="hover:text-black">Los Angeles</Link></li>
-              <li><Link href="/city/chicago" className="hover:text-black">Chicago</Link></li>
-              <li><Link href="/city/houston" className="hover:text-black">Houston</Link></li>
+              <li><Link href="/city/chandigarh" className="hover:text-black">Chandigarh</Link></li>
+              <li><Link href="/city/mohali" className="hover:text-black">Mohali</Link></li>
+              <li><Link href="/city/jalandhar" className="hover:text-black">Jalandhar</Link></li>
+              <li><Link href="/city/ludhiana" className="hover:text-black">Ludhiana</Link></li>
+              <li><Link href="/city/ambala" className="hover:text-black">Ambala</Link></li>
               <li><Link href="/cities" className="hover:text-black">View all cities</Link></li>
             </ul>
           </div>
@@ -61,10 +70,10 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-black mt-6">Get the App</h3>
             <div className="flex space-x-4">
               <Link href="https://apps.apple.com">
-                <img src="/placeholder.svg?height=40&width=120" alt="Download on the App Store" width={120} height={40} className="h-10" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Download_on_the_App_Store_RGB_blk.svg/1200px-Download_on_the_App_Store_RGB_blk.svg.png?height=40&width=120" alt="Download on the App Store" width={120} height={40} className="h-10" />
               </Link>
               <Link href="https://play.google.com">
-                <img src="/placeholder.svg?height=40&width=135" alt="Get it on Google Play" width={135} height={40} className="h-10" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/270px-Google_Play_Store_badge_EN.svg.png?height=40&width=135" alt="Get it on Google Play" width={135} height={40} className="h-10" />
               </Link>
             </div>
           </div>
@@ -85,4 +94,3 @@ export default function Footer() {
     </footer>
   )
 }
-
