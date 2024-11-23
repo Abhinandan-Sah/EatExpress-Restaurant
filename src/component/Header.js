@@ -23,7 +23,9 @@ const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
 
   const handleLogout = () => {
+    startTransition(() => {
     setIsLoggedIn(false);
+    });
   };
 
   return (

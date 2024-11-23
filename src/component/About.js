@@ -20,7 +20,7 @@ const About = () => {
               />
               <h3 className="text-lg text-gray-600 font-semibold mb-2">Name: <span className="text-orange-500 font-bold">EatExpress</span></h3>
               <h4 className="text-gray-600 mb-2 font-semibold">
-                Location: Lovely Profession university
+                Location: Mohali, Punjab
               </h4>
               <h4 className="text-gray-600 mb-4 font-semibold">
                 Contact: EatExpress@gmail.com
