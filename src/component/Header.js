@@ -23,9 +23,9 @@ const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
 
   const handleLogout = () => {
-    startTransition(() => {
+    // startTransition(() => {
     setIsLoggedIn(false);
-    });
+    // });
   };
 
   return (
@@ -66,7 +66,8 @@ const Header = () => {
               className="bg-orange-500 text-white px-4 py-1 rounded-lg"
               onClick={handleLogout}
             >
-              Logout({loggedInUser})
+              Logout
+              {/* Logout({loggedInUser}) */}
             </button>
           )}
         </ul>

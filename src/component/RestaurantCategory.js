@@ -14,7 +14,6 @@ const RestaurantCategory = ({dataRes, showItems, setShowIndex}) => {
                 </div>
                 { showItems && <ItemList items={dataRes?.itemCards} />}
             </div>
-
         </div> 
     );
 };
